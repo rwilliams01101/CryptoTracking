@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>NY Times Article Search</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -18,30 +18,7 @@
     />
   </head>
   <body>
-    <div class="jumbotron text-center">
-      <h1 class="display-4">Crypto Charting</h1>
-      <p class="lead">Enter Crypto or token</p>
-      <hr class="my-4" />
-      <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
-        </div>
-        <input
-          type="text"
-          class="form-control  col-3"
-          id="searchResultsInput"
-          aria-label="Sizing example input"
-          aria-describedby="inputGroup-sizing-lg"
-        />
-      </div>
-      <a class="btn btn-primary btn-lg" id="searchResultsBTN" role="button"
-        >Submit</a
-      >
-    </div>
-    <!-- Added HTML to load atricles -->
-    <div class="container" id="displayResults"></div>
     <!-- Optional JavaScript -->
-
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -58,123 +35,11 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-      // Formatter for currency
-      var formatter = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-        minimumFractionDigits: 2
-      });
-
-      // on the click of the search results button
-      $("#searchResultsBTN").on("click", function() {
-        console.log("got it");
-        var searchResults = $("#searchResultsInput").val();
-        // BravenewCoin
-        var settings = {
-          async: true,
-          crossDomain: true,
-          url:
-            "https://bravenewcoin-v1.p.rapidapi.com/ticker?show=usd&coin=" +
-            searchResults,
-          method: "GET",
-          headers: {
-            "x-rapidapi-host": "bravenewcoin-v1.p.rapidapi.com",
-            "x-rapidapi-key":
-              "3cdd6db29bmshe1fcadac9208badp13fe1ajsna4db56902884"
-          }
-        };
-
-        $.ajax(settings).done(function(response) {
-          console.log(response);
-
-          var name = response.coin_name;
-          var {
-            coin_id,
-            coin_name,
-            last_price,
-            price_24hr_pcnt,
-            volume_24hr,
-            vol_24hr_pcnt
-          } = response;
-
-          // // Empty the results before building new ones.
-          // $("#displayResults").empty();
-          buildCard(response);
-        });
-      });
-
-      function buildCard(response) {
-        var {
-          coin_id,
-          coin_name,
-          last_price,
-          price_24hr_pcnt,
-          volume_24hr,
-          vol_24hr_pcnt
-        } = response;
-
-        //         <div class="card">
-        //   <div class="card-header">
-        //     Featured
-        //   </div>
-        //   <div class="card-body">
-        //     <h5 class="card-title">Special title treatment</h5>
-        //     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        //     <a href="#" class="btn btn-primary">Go somewhere</a>
-        //   </div>
-        // </div>
-        debugger;
-        var cardDiv = $("<div>").addClass("card col-3");
-
-        var cardDivHeader = $("<div>")
-          .addClass("card-header text-center")
-          .text(coin_name);
-
-        var cardDivBody = $("<P>")
-          .addClass("card-text")
-          .text("Price: " + formatter.format(last_price));
-        // cardDivH5 = $("<h5>");
-        // cardDivH5.addClass("card-title");
-
-        cardDiv.append(cardDivHeader);
-        cardDiv.append(cardDivBody);
-
-        $("#displayResults").append(cardDiv);
-      }
-      // This function can take in 3 parameter items.  I called them value, index, and array (See: https://www.w3schools.com/js/js_array_iteration.asp)
-      // It seems wierd that when calling this function, you do not need to pass these parameters in.  Not sure why?!?!?
-      function loadArticles(value, index, array) {
-        // Value is information in the current array item we are in
-        // console.log("value = ", value);
-        //
-        // Index is the number of the index we are on
-        // console.log("index = ", index);
-        //
-        // array is the FULL array
-        // console.log("array = ", array);
-
-        var abstract = value.abstract;
-        var url = value.web_url;
-
-        var buildArticle = $("<row>");
-        buildArticle.addClass("row mb-2");
-
-        var clickCol = $("<button>");
-        clickCol.addClass("btn col-md-1 btn-primary");
-        onclickVar = "window.open('" + url + "', 'blank')";
-        clickCol.attr("onClick", onclickVar);
-        clickCol.text("Link");
-        buildArticle.append(clickCol);
-
-        var articleCol = $("<p>");
-        articleCol.addClass("col-md-11");
-        articleCol.text(abstract);
-        buildArticle.append(articleCol);
-
-        $("#displayResults").append(buildArticle);
-      }
-    </script>
+    <script src="./script.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
