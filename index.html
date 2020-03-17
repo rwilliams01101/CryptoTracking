@@ -16,6 +16,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- Optional JavaScript -->
@@ -41,5 +42,61 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
+   
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-4 font-weight-bold text-center">Your Crypto Currencies</h1>
+          <p class="lead text-center">
+            A Portfolio to keep track of your Crypto Investments
+          </p>
+        </div>
+      
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Currency Search:</label>
+                <input
+                  type="input"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="Enter Currency Here"
+                />
+              </div>
+              <button type="button" class="btn btn-outline-dark">
+                Search
+              </button>
+              <button type="button" class="btn btn-outline-dark">Clear</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <br />
+            <!-- This card will initially be made up of a card for each of the products retrieved -->
+            <div class="card">
+              <div class="card-header">
+                <strong> <i class="table"></i> Top Results</strong>
+              </div>
+              <div class="card-body" id="result-section"></div>
+            </div>
+          </div>
+        </div>
+     
+      <div class="row">
+          <div class="col-sm-12">
+            <hr>
+            <h5 class="text-center">
+              <small>Group-4 One_Search
+              </small>
+            </h5>
+          </div>
+        </div>
+    </body>
+  </html>
+  
   </body>
 </html>
