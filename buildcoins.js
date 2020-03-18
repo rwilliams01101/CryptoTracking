@@ -45,6 +45,9 @@ function buildCard() {
     .addClass("card-header text-center")
     .text(coin_name);
 
+  // this is a placeholder until API data becomes available. Will save all icons in "Assets" folder
+  var img =$("<img>").attr("src", "http://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/48/NEO-icon.png");
+
   var cardDivBody = $("<P>")
     .addClass("card-text")
     .text("Price: $50.00");
@@ -52,15 +55,18 @@ function buildCard() {
   var coinVolume = $("<div>").text("Volume: 15000");
 
   var deleteBtn = $("<div>").html("<button>Delete</button>");
+
   // type="button" class="btn btn-outline-dark"
   // .text("Price: " + formatter.format(last_price)); <<<< this was line 73
   // cardDivH5 = $("<h5>");
   // cardDivH5.addClass("card-title");
 
-  cardDiv.append(cardDivHeader);
-  cardDiv.append(cardDivBody);
-  cardDiv.append(coinVolume);
-  cardDiv.append(deleteBtn);
+  cardDiv.append(
+    cardDivHeader,
+    img,
+    cardDivBody,
+    coinVolume,
+    deleteBtn);
 
   $("#cardRender").append(cardDiv);
 }
