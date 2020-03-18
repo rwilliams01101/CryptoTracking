@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>CryptoTracking</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -50,7 +50,7 @@
             A Portfolio to keep track of your Crypto Investments
           </p>
         </div>
-      
+      <!--The following container is for the Jumbotron with the search bar at the top of the page-->
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-6 offset-sm-3">
@@ -64,7 +64,7 @@
                   placeholder="Enter Currency Here"
                 />
               </div>
-              <button type="button" class="btn btn-outline-dark">
+              <button type="button" class="btn btn-outline-dark" id='search'>
                 Search
               </button>
               <button type="button" class="btn btn-outline-dark">Clear</button>
@@ -73,19 +73,33 @@
         </div>
       </div>
   </div>
+<!-- The following container is where the cryptocurrencies will be added once searched-->
+  <div class="row" id="cryptoCards">
+   <div class="col-sm-12">
+      <br />
+     <div class="card">
+        <div class="card-header">
+        <strong> <i class="table"></i>Your Crypto Currencies</strong>
+       </div>
+       <!--in the following class is what you'll reference to add each cryptocard-->
+       <div class="card-body" id="add-crytocards"></div>
+     </div>
+   </div>
+  </div>
+<!--This next container is where I will be adding the news articles -->
         <div class="row">
           <div class="col-sm-12">
             <br />
-            <!-- This card will initially be made up of a card for each of the products retrieved -->
             <div class="card">
               <div class="card-header">
-                <strong> <i class="table"></i> Top Results</strong>
+                <strong> <i class="table"></i>Related News Articles</strong>
               </div>
               <div class="card-body" id="result-section"></div>
             </div>
           </div>
         </div>
-     
+
+     <!-- The following container is the footer at the end of the page-->
       <div class="row">
           <div class="col-sm-12">
             <hr>
@@ -97,6 +111,6 @@
         </div>
     </body>
   </html>
-  
+  <script src = "./newscript.js"></script>
   </body>
 </html>
