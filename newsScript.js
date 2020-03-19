@@ -25,6 +25,16 @@ var vol_24hr_pcnt = "";
 // Event listener for search button
 $("#search").on("click", function() {
   var searchResult = $(".form-control").val();
+
+  // Set the value to the search result or make the variable and an empty array
+  var coinList = JSON.parse(window.localStorage.getItem("coins")) || [];
+
+  // If the item is not in the array, add it to the string and the local array.
+  if (coinList.indexOf(searchResult) < 0) {
+    coinList.push(searchResult.toUpperCase());
+    window.localStorage.setItem("coins", JSON.stringify(coinList));
+  }
+
   displayNews(searchResult);
 
   $(".form-control").val("");
@@ -110,13 +120,13 @@ $(document).on("click", "#deleteBtn", function() {
 
 function displayNews(searchResult) {
   var queryURL =
-  "https://newsapi.org/v2/everything?q=" +
-  searchResult +
-  "&" +
-  "sortBy=popularity&" +
-  "apiKey=38c87e1ae12f4acfb71ae21131a63bce";
+    "https://newsapi.org/v2/everything?q=" +
+    searchResult +
+    "&" +
+    "sortBy=popularity&" +
+    "apiKey=38c87e1ae12f4acfb71ae21131a63bce";
   console.log("S Result: " + searchResult);
-  
+
   $.ajax({
     url: queryURL,
     method: "GET"
