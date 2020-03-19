@@ -7,19 +7,47 @@ Add delete button that will remove from local storage and page.
 Display information on card
 Add data to card.
 Add delete button on card */
+var coin_id = "";
+function searchStart() {
+var searchValue = "btc";
 
-function buildCard() {
-  // var {
-  //   coin_id,
-  //   coin_name = "Neo",
-  //   last_price,
-  //   price_24hr_pcnt,
-  //   volume_24hr,
-  //   vol_24hr_pcnt
-  // } = response;
+// this is a placeholder until API data becomes available
+// var coin_name = "Neo";
+// beginning of changes
+// BravenewCoin 
+var settings = {
+  async: true,
+  crossDomain: true,
+  url:
+  "https://bravenewcoin-v1.p.rapidapi.com/ticker?show=usd&coin=" +
+  searchValue,
+  method: "GET",
+  headers: {
+    "x-rapidapi-host": "bravenewcoin-v1.p.rapidapi.com",
+    "x-rapidapi-key": "3cdd6db29bmshe1fcadac9208badp13fe1ajsna4db56902884"
+  }
+};
+$.ajax(settings).then(function(response) {
+  // console.log(response);
+  // console.log(searchValue);
+  var {
+    coin_id,
+    coin_name,
+    last_price,
+    price_24hr_pcnt,
+    volume_24hr,
+    vol_24hr_pcnt
+  } = response;
+  console.log(coin_id);
+  console.log(coin_name);
+  console.log(last_price);
+  console.log(price_24hr_pcnt);
+  console.log(volume_24hr);
+});
+}
 
-  // this is a placeholder until API data becomes available
-  var coin_name = "Neo";
+// end of changes
+function buildCard(response) {
 
   var cardDiv = $("<div>").addClass("col-sm-3");
 
@@ -68,5 +96,5 @@ $("#searchBtn").on("click", function() {
   // take the value of "exampleFormControlInput1" id and clear the value
   $("#exampleFormControlInput1").val("");
   // fire function "buildCard" with searchValue as an argument
-  buildCard(searchValue);
+  searchStart(searchValue);
 });
