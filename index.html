@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>CryptoTracking</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -16,8 +16,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
   </head>
   <body>
     <!-- Optional JavaScript -->
@@ -37,23 +36,21 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="./script.js"></script>
+    <!-- <script src="./script.js"></script> -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
-
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="display-4 font-weight-bold text-center">
-          Your Crypto Currencies
-        </h1>
-        <p class="lead text-center">
-          A Portfolio to keep track of your Crypto Investments
-        </p>
-      </div>
-
+   
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-4 font-weight-bold text-center">Your Crypto Currencies</h1>
+          <p class="lead text-center">
+            A Portfolio to keep track of your Crypto Investments
+          </p>
+        </div>
+      <!--The following container is for the Jumbotron with the search bar at the top of the page-->
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-6 offset-sm-3">
@@ -67,7 +64,7 @@
                   placeholder="Enter Currency Here"
                 />
               </div>
-              <button type="button" class="btn btn-outline-dark" id="searchBtn">
+              <button type="button" class="btn btn-outline-dark" id='search'>
                 Search
               </button>
               <button type="button" class="btn btn-outline-dark" id="clrBtn">Clear</button>
@@ -75,43 +72,46 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Card Data -->
-    <div id="card-section">
-      <!-- Render a sample HTML componant for a cyptocurrancy -->
-      <div class="row" id="cardRender">
-        <div class="col-sm-3">
-          <br />
-          <!-- This card will initially be made up of a card for each of the products retrieved -->
-          <div class="card">
-            <div class="card-header">
-              <strong> <i class="table"></i> BTC (Bitcoin)</strong>
-            </div>
-            <div class="card-body" id="result-section">
-              <!-- render a sample new HTML componant here -->
-              <p>Price: $5,000</p>
-              <p>Volume: 10000</p>
-              <button>Delete</button>
+  </div>
+<!-- The following container is where the cryptocurrencies will be added once searched-->
+  <div class="row" id="cryptoCards">
+   <div class="col-sm-12">
+      <br />
+     <div class="card">
+        <div class="card-header">
+        <strong> <i class="table"></i>Your Crypto Currencies</strong>
+       </div>
+       <!--in the following class is what you'll reference to add each cryptocard-->
+       <div class="card-body" id="add-crytocards"></div>
+     </div>
+   </div>
+  </div>
+<!--This next container is where I will be adding the news articles -->
+        <div class="row">
+          <div class="col-sm-12">
+            <br />
+            <div class="card">
+              <div class="card-header">
+                <strong> <i class="table"></i>Related News Articles</strong>
+              </div>
+              <div class="card-body" id="result-section"></div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- News Data -->
-      <div id="news-section"></div>
-      <!-- news card data -->
-    </div>
-
-    <!-- Footer Section -->
-    <div class="row">
-      <div class="col-sm-12">
-        <hr />
-        <h5 class="text-center">
-          <small>Group-4 One_Search </small>
-        </h5>
-      </div>
-    </div>
+     <!-- The following container is the footer at the end of the page-->
+      <div class="row">
+          <div class="col-sm-12">
+            <hr>
+            <h5 class="text-center">
+              <small>Group-4 One_Search
+              </small>
+            </h5>
+          </div>
+        </div>
+    </body>
+  </html>
+  <!-- <script src = "./newscript.js"></script> -->
+  <script src = "buildcoins.js"></script>
   </body>
-  <script src="buildcoins.js"></script>
 </html>
