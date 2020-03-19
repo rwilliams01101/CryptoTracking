@@ -16,3 +16,14 @@
     font-family: 'Nunito', sans-serif;
     background-color:  #d6e0f5;
 }
+/* img{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    float: left; }*/
+
+#newCard{
+    position: absolute;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
