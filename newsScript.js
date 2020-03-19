@@ -110,7 +110,7 @@ $(document).on("click", "#deleteBtn", function() {
 
 function displayNews(searchResult) {
   var queryURL =
-  "http://newsapi.org/v2/everything?q=" +
+  "https://newsapi.org/v2/everything?q=" +
   searchResult +
   "&" +
   "sortBy=popularity&" +
