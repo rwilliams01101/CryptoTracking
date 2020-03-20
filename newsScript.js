@@ -109,8 +109,11 @@ $(document).on("click", "#deleteBtn", function() {
 // });
 
 function displayNews(searchResult) {
+  if(searchResult=="NEO"||searchResult=="neo"){
+    searchResult = "neo cryptocurrency"
+  }
   var queryURL =
-  "https://newsapi.org/v2/everything?q=" +
+  "https://newsapi.org/v2/everything?language=en&q=" +
   searchResult +
   "&" +
   "sortBy=popularity&" +
