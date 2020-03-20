@@ -1,28 +1,11 @@
-/* FOR REFERECE ONLY. 
+// Event listener for search button
 
-Add dynamic HTML to aggregate the coin.
-
-Add cards for each coin based on data in local storage.
-Add delete button that will remove from local storage and page.
-Display information on card
-Add data to card.
-Add delete button on card */
-
-// var coin_id = "";
-var coin_name = "";
-var last_price = "";
-var price_24hr_pcnt = "";
-var volume_24hr = "";
-var vol_24hr_pcnt = "";
-// var searchResult = "";
-
-// Clear button removes all items in "col-sm-3" class
-// covered on newsScript.js
-// $("#clear").on("click", function() {
-//   $(".col-12").remove();
+// $(document).on('keypress',function(e) {
+//   if(e.which == 13) {
+//     $("#search");  
+//   }
 // });
 
-// Event listener for search button
 $("#search").on("click", function() {
   var searchResult = $(".form-control").val();
   displayNews(searchResult);
@@ -34,7 +17,7 @@ $("#search").on("click", function() {
   }
   // take the value of "exampleFormControlInput1" id and clear the value
   $("#exampleFormControlInput1").val("");
-  // fire function "buildCard" with searchResult as an argument
+
   var settings = {
     async: true,
     crossDomain: true,
@@ -83,14 +66,8 @@ $("#search").on("click", function() {
       .html("<button id=deleteBtn>Delete</button>")
       .addClass("card-body");
 
-    // type="button" class="btn btn-outline-dark"
-    // .text("Price: " + formatter.format(last_price)); <<<< this was line 73
-    // cardDivH5 = $("<h5>");
-    // cardDivH5.addClass("card-title");
-
     cardDiv.append(cardDivHeader, cardDivBody, coin24hr, coinVolume, deleteBtn);
 
-    // $("#cardRender").append(cardDiv); cryptoCards
     $("#add-crytocards").append(cardDiv);
   });
 });
@@ -99,14 +76,6 @@ $("#search").on("click", function() {
 $(document).on("click", "#deleteBtn", function() {
   console.log("delete is working");
 });
-
-// $("#search").on("click", function() {
-//   var searchResult = $(".form-control").val();
-//   console.log(searchResult);
-//   // displayNews(searchResult);
-
-//   // $(".form-control").val("");
-// });
 
 function displayNews(searchResult) {
   var queryURL =
