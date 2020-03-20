@@ -17,6 +17,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f9e7f8550a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Optional JavaScript -->
@@ -39,7 +40,8 @@
     <!-- <script src="./script.js"></script> -->
    
       <div class="jumbotron">
-        <div class="container">
+        <div class="container"> 
+          <i class="far fa-money-bill-alt fa-5x"></i> 
           <h1 class="display-4 font-weight-bold text-center">Your Crypto Currencies</h1>
           <p class="lead text-center">
             A Portfolio to keep track of your Crypto Investments
@@ -59,10 +61,10 @@
                   placeholder="Enter Currency Here"
                 />
               </div>
-              <button type="button" class="btn btn-outline-dark" id='search'>
+              <button type="button" class="btn btn-outline-light" id='search'>
                 Search
               </button>
-              <button type="button" class="btn btn-outline-dark" id = 'clear'>Clear</button>
+              <button type="button" class="btn btn-outline-light" id = 'clear'>Clear</button>
             </form>
           </div>
         </div>
@@ -74,7 +76,7 @@
       <br />
      <div class="card">
         <div class="card-header">
-        <strong> <i class="table"></i>Your Crypto Currencies</strong>
+        <i class="fas fa-coins"></i><strong>  Your Crypto Currencies </strong>
        </div>
        <!--in the following class is what you'll reference to add each cryptocard-->
        <div class="card-body row" id="add-crytocards"></div>
@@ -87,7 +89,7 @@
             <br />
             <div class="card">
               <div class="card-header">
-                <strong> <i class="table"></i>Related News Articles</strong>
+                <i class="far fa-newspaper"></i><strong>  Related News Articles </strong>
               </div>
               <div class="card-body" id="result-section"></div>
             </div>

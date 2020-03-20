@@ -1,8 +1,9 @@
 .jumbotron{
-    background-color: #d6e0f5;
+    background-color: rgb(83, 83, 83);
     text-align: center;
     font-size: large;
     font-family: 'Nunito', sans-serif;
+    color: white;
     
 }
 .form-group{
@@ -14,16 +15,24 @@
 }
 .card-header{
     font-family: 'Nunito', sans-serif;
-    background-color:  #d6e0f5;
+    background-color:  rgb(83, 83, 83);
+    color: white;
 }
-/* img{
-    position: relative;
-    height: 100px;
-    width: 100px;
-    float: left; }*/
-
 #newCard{
     position: absolute;
     font-family: 'Nunito', sans-serif;
     text-align: center;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    }
+#add-cryptocards{
+    float: left;
+}
+i{
+    color: white;
 }
