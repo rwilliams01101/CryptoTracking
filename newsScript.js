@@ -1,10 +1,10 @@
 // Event listener for search button
 
-// $(document).on('keypress',function(e) {
-//   if(e.which == 13) {
-//     $("#search");  
-//   }
-// });
+$(document).on('keypress',function(e) {
+  if(e.which == 13) {
+    $("#search").click();
+  }
+});
 
 // Add code to pre-populate the notes and cards if there are coins in local storage.
 $(document).ready(function() {
