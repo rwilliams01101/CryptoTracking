@@ -12,6 +12,6 @@ function loadHistData(coin) {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response);
+    // console.log(response);
   });
 }
