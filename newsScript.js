@@ -31,7 +31,7 @@ $(document).ready(function() {
 function displayAll(searchResult) {
   displayNews(searchResult);
   displayCards(searchResult);
-  console.log(searchResult);
+  //  console.log(searchResult);
 }
 // Event listener for search button
 $("#search").on("click", function() {
