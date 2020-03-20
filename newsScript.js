@@ -40,6 +40,7 @@ $("#search").on("click", function() {
     displayCards(searchResult);
   }
 });
+
 function displayCards(searchResult) {
   // take the value of "exampleFormControlInput1" id and clear the value
   $("#exampleFormControlInput1").val("");
@@ -73,7 +74,7 @@ function displayCards(searchResult) {
     var cardDiv = $("<div>").addClass("col-3");
 
     var cardDivHeader = $("<h4>")
-      .addClass("card-header")
+      .addClass("card-header deleteCard")
       .text(coin_id + " | " + coin_name);
 
     var cardDivBody = $("<div style=font-size:125%;>")
@@ -100,7 +101,7 @@ function displayCards(searchResult) {
 
 // TODO: Still developing deleteBtn functionality, need to get unique ids to generate for cards
 $(document).on("click", "#deleteBtn", function() {
-  //  console.log("delete is working");
+  $(this).closest('.col-3').remove();
 });
 
 function displayNews(searchResult) {
