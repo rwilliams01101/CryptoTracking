@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CryptoTracking</title>
+    <title>CryptoTracking | Financial Intellegence That Pays</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -17,6 +17,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f9e7f8550a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Optional JavaScript -->
@@ -39,11 +40,8 @@
     <!-- <script src="./script.js"></script> -->
    
       <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-4 font-weight-bold text-center">Your Crypto Currencies</h1>
-          <p class="lead text-center">
-            A Portfolio to keep track of your Crypto Investments
-          </p>
+        <div class="container"> 
+          <img id="logo" src="CT_Logo_Clear.png">
         </div>
       <!--The following container is for the Jumbotron with the search bar at the top of the page-->
       <div class="container-fluid">
@@ -51,43 +49,87 @@
           <div class="col-sm-6 offset-sm-3">
             <form>
               <div class="form-group">
-                <label for="exampleFormControlInput1">Currency Search:</label>
-                <input
-                  type="input"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Enter Currency Here"
-                />
+                <!-- <label for="exampleFormControlInput1">Please Select Your Currency:</label> -->
+                <select class="form-control select2">
+                  <option value="">Please Select Your Currency</option>
+                  <option>ADA</option>
+                  <option>ALGO</option> 
+                  <option>ATOM</option> 
+                  <option>BAT</option> 
+                  <option>BCD</option> 
+                  <option>BCH</option>
+                  <option>BNB</option>  
+                  <option>BTC</option> 
+                  <option>BTG</option> 
+                  <option>BUSD</option> 
+                  <option>CAR</option> 
+                  <option>CRO</option> 
+                  <option>DASH</option> 
+                  <option>DCR</option> 
+                  <option>DOGE</option> 
+                  <option>EOS</option> 
+                  <option>ETC</option> 
+                  <option>ETH</option> 
+                  <option>FTT</option> 
+                  <option>HBAR</option> 
+                  <option>HEDG</option> 
+                  <option>HT</option> 
+                  <option>ICX</option> 
+                  <option>IOTA</option> 
+                  <option>KCS</option> 
+                  <option>LEO</option> 
+                  <option>LSK</option> 
+                  <option>LTC</option> 
+                  <option>MKR</option>  
+                  <option>NEO</option> 
+                  <option>OKB</option> 
+                  <option>ONT</option> 
+                  <option>PAX</option> 
+                  <option>QTUM</option> 
+                  <option>REP</option> 
+                  <option>SNX</option> 
+                  <option>TRX</option> 
+                  <option>TUSD</option> 
+                  <option>USDC</option> 
+                  <option>VET</option> 
+                  <option>WAVES</option> 
+                  <option>XLM</option> 
+                  <option>XMR</option> 
+                  <option>XRP</option> 
+                  <option>XTZ</option>  
+                  <option>ZEC</option> 
+                  <option>ZRX</option> 
+               </select>
               </div>
-              <button type="button" class="btn btn-outline-dark" id='search'>
+              <button type="button" class="btn btn-outline-secondary" id='search'>
                 Search
               </button>
-              <button type="button" class="btn btn-outline-dark" id = 'clear'>Clear</button>
+              <button type="button" class="btn btn-outline-secondary" id = 'clear'>Clear</button>
             </form>
           </div>
         </div>
       </div>
   </div>
 <!-- The following container is where the cryptocurrencies will be added once searched-->
-  <div class="row" id="cryptoCards">
+  <div class="container-fluid" id="cryptoCards">
    <div class="col-sm-12">
       <br />
      <div class="card">
         <div class="card-header">
-        <strong> <i class="table"></i>Your Crypto Currencies</strong>
+        <i class="fas fa-coins"></i><strong>  Your Crypto Currencies </strong>
        </div>
        <!--in the following class is what you'll reference to add each cryptocard-->
-       <div class="card-body" id="add-crytocards"></div>
+       <div class="card-body row" id="add-crytocards"></div>
      </div>
    </div>
   </div>
 <!--This next container is where I will be adding the news articles -->
-        <div class="row">
+        <div class="container-fluid">
           <div class="col-sm-12">
             <br />
             <div class="card">
               <div class="card-header">
-                <strong> <i class="table"></i>Related News Articles</strong>
+                <i class="far fa-newspaper"></i><strong>  Related News Articles </strong>
               </div>
               <div class="card-body" id="result-section"></div>
             </div>
@@ -95,18 +137,23 @@
         </div>
 
      <!-- The following container is the footer at the end of the page-->
-      <div class="row">
+      <footer class="row">
           <div class="col-sm-12">
             <hr>
             <h5 class="text-center">
-              <small>Group-4 One_Search
+              <small>
+                Created by the CryptoTracking Team
               </small>
+              <div>
+                <img src="./cryptlogo.jpg" alt="cyptologo">
+              </div>
             </h5>
           </div>
-        </div>
+      </footer>
     </body>
   </html>
   <script src = "./newsScript.js"></script>
+  <script src = "./coindeskAPI.js"></script>
   <!-- <script src = "buildcoins.js"></script> -->
   </body>
 </html>

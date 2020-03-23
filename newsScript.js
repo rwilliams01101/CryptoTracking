@@ -1,40 +1,50 @@
-/* FOR REFERECE ONLY. 
+// Event listener for search button
 
-Add dynamic HTML to aggregate the coin.
+$(document).on('keypress',function(e) {
+  if(e.which == 13) {
+    $("#search").click();
+  }
+});
 
-Add cards for each coin based on data in local storage.
-Add delete button that will remove from local storage and page.
-Display information on card
-Add data to card.
-Add delete button on card */
+// Add code to pre-populate the notes and cards if there are coins in local storage.
+$(document).ready(function() {
+  var coinList = JSON.parse(window.localStorage.getItem("coins")) || [];
+  coinList.forEach(displayAll);
+});
 
-// var coin_id = "";
-var coin_name = "";
-var last_price = "";
-var price_24hr_pcnt = "";
-var volume_24hr = "";
-var vol_24hr_pcnt = "";
-// var searchResult = "";
-
-// Clear button removes all items in "col-sm-3" class
-// covered on newsScript.js
-// $("#clear").on("click", function() {
-//   $(".col-12").remove();
-// });
-
+function displayAll(searchResult) {
+  displayNews(searchResult);
+  displayCards(searchResult);
+  //  console.log(searchResult);
+}
 // Event listener for search button
 $("#search").on("click", function() {
   var searchResult = $(".form-control").val();
-  displayNews(searchResult);
 
+  // If form control box is null, Return
   $(".form-control").val("");
-  console.log("searchResult :" + searchResult);
+  // console.log("searchResult :" + searchResult);
   if (searchResult == "") {
     return;
   }
+
+  // Set the value to the search result or make the variable and an empty array
+  var coinList = JSON.parse(window.localStorage.getItem("coins")) || [];
+
+  // If the item is not in the array, add it to the string and the local array.
+  if (coinList.indexOf(searchResult) < 0) {
+    coinList.push(searchResult.toUpperCase());
+    window.localStorage.setItem("coins", JSON.stringify(coinList));
+
+    displayNews(searchResult);
+    displayCards(searchResult);
+  }
+});
+
+function displayCards(searchResult) {
   // take the value of "exampleFormControlInput1" id and clear the value
   $("#exampleFormControlInput1").val("");
-  // fire function "buildCard" with searchResult as an argument
+
   var settings = {
     async: true,
     crossDomain: true,
@@ -56,81 +66,75 @@ $("#search").on("click", function() {
       volume_24hr,
       vol_24hr_pcnt
     } = response;
-    console.log(coin_id);
-    console.log(coin_name);
-    console.log(last_price);
-    console.log(price_24hr_pcnt);
-    console.log(volume_24hr);
-    var cardDiv = $("<div>").addClass("col-12");
+    // console.log(coin_id);
+    // console.log(coin_name);
+    // console.log(last_price);
+    // console.log(price_24hr_pcnt);
+    // console.log(volume_24hr);
+    var cardDiv = $("<div>").addClass("col-sm-3");
 
     var cardDivHeader = $("<h4>")
       .addClass("card-header")
       .text(coin_id + " | " + coin_name);
 
     var cardDivBody = $("<div style=font-size:125%;>")
+      .attr("id", "cardBack")
       .addClass("card-body")
       .text("Price: " + last_price);
 
     var coin24hr = $("<div style=font-size:125%;>")
+      .attr("id", "cardBack")
       .text("Daily Variation: " + price_24hr_pcnt)
       .addClass("card-body");
+      
 
     var coinVolume = $("<div style=font-size:125%;>")
-      .text("Volume: " + volume_24hr)
+      .attr("id", "cardBack")
+      .text("Daily Volume: " + volume_24hr)
       .addClass("card-body");
 
     var deleteBtn = $("<div>")
-      .html("<button id=deleteBtn>Delete</button>")
+      .attr("id", "cardBack")
+      .html("<button type=button class=btn btn-outline-secondary id=deleteBtn>Delete</button>")
       .addClass("card-body");
-
-    // type="button" class="btn btn-outline-dark"
-    // .text("Price: " + formatter.format(last_price)); <<<< this was line 73
-    // cardDivH5 = $("<h5>");
-    // cardDivH5.addClass("card-title");
 
     cardDiv.append(cardDivHeader, cardDivBody, coin24hr, coinVolume, deleteBtn);
 
-    // $("#cardRender").append(cardDiv); cryptoCards
     $("#add-crytocards").append(cardDiv);
   });
-});
+}
 
 // TODO: Still developing deleteBtn functionality, need to get unique ids to generate for cards
 $(document).on("click", "#deleteBtn", function() {
-  console.log("delete is working");
+  $(this).closest('.col-sm-3').remove();
 });
 
-// $("#search").on("click", function() {
-//   var searchResult = $(".form-control").val();
-//   console.log(searchResult);
-//   // displayNews(searchResult);
-
-//   // $(".form-control").val("");
-// });
-
 function displayNews(searchResult) {
+  if(searchResult=="NEO"||searchResult=="neo"){
+    searchResult = "neo cryptocurrency"
+  }
   var queryURL =
-  "https://newsapi.org/v2/everything?q=" +
+  "https://newsapi.org/v2/everything?language=en&q=" +
   searchResult +
   "&" +
   "sortBy=popularity&" +
   "apiKey=38c87e1ae12f4acfb71ae21131a63bce";
-  console.log("S Result: " + searchResult);
-  
+
+
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response);
+    // console.log(response);
 
     for (i = 0; i < 3; i++) {
       var articleLink = response.articles[i].url;
       var articleDesc = response.articles[i].description;
 
-      console.log(articleLink);
+      // console.log(articleLink);
 
       var divCard = $("<div class = card id = newsCard>");
-      console.log(divCard);
+      // console.log(divCard);
       var addArticles = $("<a>");
       var addImage = $("<img>");
 
@@ -152,5 +156,7 @@ function displayNews(searchResult) {
   });
 }
 $("#clear").on("click", function() {
+  var coinList = "";
+  window.localStorage.removeItem("coins");
   location.reload();
 });
