@@ -1,7 +1,7 @@
 // Event listener for search button
 
-$(document).on('keypress',function(e) {
-  if(e.which == 13) {
+$(document).on("keypress", function(e) {
+  if (e.which == 13) {
     $("#search").click();
   }
 });
@@ -71,7 +71,9 @@ function displayCards(searchResult) {
     // console.log(last_price);
     // console.log(price_24hr_pcnt);
     // console.log(volume_24hr);
-    var cardDiv = $("<div>").addClass("col-sm-3");
+    var cardDiv = $("<div>")
+      .addClass("col-sm-3")
+      .attr("id", coin_id);
 
     var cardDivHeader = $("<h4>")
       .addClass("card-header")
@@ -86,7 +88,6 @@ function displayCards(searchResult) {
       .attr("id", "cardBack")
       .text("Daily Variation: " + price_24hr_pcnt)
       .addClass("card-body");
-      
 
     var coinVolume = $("<div style=font-size:125%;>")
       .attr("id", "cardBack")
@@ -95,7 +96,9 @@ function displayCards(searchResult) {
 
     var deleteBtn = $("<div>")
       .attr("id", "cardBack")
-      .html("<button type=button class=btn btn-outline-secondary id=deleteBtn>Delete</button>")
+      .html(
+        "<button type=button class=btn btn-outline-secondary id=deleteBtn>Delete</button>"
+      )
       .addClass("card-body");
 
     cardDiv.append(cardDivHeader, cardDivBody, coin24hr, coinVolume, deleteBtn);
@@ -106,18 +109,24 @@ function displayCards(searchResult) {
 
 // TODO: Still developing deleteBtn functionality, need to get unique ids to generate for cards
 $(document).on("click", "#deleteBtn", function() {
-  $(this).closest('.col-sm-3').remove();
+  var deleteLS = this.closest(".col-sm-3").id;
+  var coinList = JSON.parse(window.localStorage.getItem("coins"));
+  var arrayPos = coinList.indexOf(deleteLS, coinList);
+  coinList.splice(arrayPos, 1);
+  window.localStorage.setItem("coins", JSON.stringify(coinList));
+  $(this)
+    .closest(".col-sm-3")
+    .remove();
 });
 
 function displayNews(searchResult) {
-  if(searchResult=="NEO"||searchResult=="neo"){
-    searchResult = "neo cryptocurrency"
+  if (searchResult == "NEO" || searchResult == "neo") {
+    searchResult = "neo cryptocurrency";
   }
   var queryURL =
   "https://min-api.cryptocompare.com/data/v2/news/?categories=" +
   searchResult +
   ",&lang=EN"
-
 
   $.ajax({
     url: queryURL,
