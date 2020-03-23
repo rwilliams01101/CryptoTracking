@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CryptoTracking</title>
+    <title>CryptoTracking | Financial Intellegence That Pays</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -41,11 +41,7 @@
    
       <div class="jumbotron">
         <div class="container"> 
-          <i class="far fa-money-bill-alt fa-5x"></i> 
-          <h1 class="display-4 font-weight-bold text-center">Your Crypto Currencies</h1>
-          <p class="lead text-center">
-            A Portfolio to keep track of your Crypto Investments
-          </p>
+          <img id="logo" src="CT_Logo_Clear.png">
         </div>
       <!--The following container is for the Jumbotron with the search bar at the top of the page-->
       <div class="container-fluid">
@@ -53,9 +49,10 @@
           <div class="col-sm-6 offset-sm-3">
             <form>
               <div class="form-group">
-                <label for="exampleFormControlInput1">Please Select Your Currency:</label>
+                <!-- <label for="exampleFormControlInput1">Please Select Your Currency:</label> -->
                 <select class="form-control select2">
-                  <option>ADA</option> 
+                  <option value="">Please Select Your Currency</option>
+                  <option>ADA</option>
                   <option>ALGO</option> 
                   <option>ATOM</option> 
                   <option>BAT</option> 
@@ -83,13 +80,31 @@
                   <option>LEO</option> 
                   <option>LSK</option> 
                   <option>LTC</option> 
-                  <option>MKR</option> 
+                  <option>MKR</option>  
+                  <option>NEO</option> 
+                  <option>OKB</option> 
+                  <option>ONT</option> 
+                  <option>PAX</option> 
+                  <option>QTUM</option> 
+                  <option>REP</option> 
+                  <option>SNX</option> 
+                  <option>TRX</option> 
+                  <option>TUSD</option> 
+                  <option>USDC</option> 
+                  <option>VET</option> 
+                  <option>WAVES</option> 
+                  <option>XLM</option> 
+                  <option>XMR</option> 
+                  <option>XRP</option> 
+                  <option>XTZ</option>  
+                  <option>ZEC</option> 
+                  <option>ZRX</option> 
                </select>
               </div>
-              <button type="button" class="btn btn-outline-light" id='search'>
+              <button type="button" class="btn btn-outline-secondary" id='search'>
                 Search
               </button>
-              <button type="button" class="btn btn-outline-light" id = 'clear'>Clear</button>
+              <button type="button" class="btn btn-outline-secondary" id = 'clear'>Clear</button>
             </form>
           </div>
         </div>
@@ -109,7 +124,7 @@
    </div>
   </div>
 <!--This next container is where I will be adding the news articles -->
-        <div class="row">
+        <div class="container-fluid">
           <div class="col-sm-12">
             <br />
             <div class="card">

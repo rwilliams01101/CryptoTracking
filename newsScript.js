@@ -74,23 +74,28 @@ function displayCards(searchResult) {
     var cardDiv = $("<div>").addClass("col-sm-3");
 
     var cardDivHeader = $("<h4>")
-      .addClass("card-header deleteCard")
+      .addClass("card-header")
       .text(coin_id + " | " + coin_name);
 
     var cardDivBody = $("<div style=font-size:125%;>")
+      .attr("id", "cardBack")
       .addClass("card-body")
       .text("Price: " + last_price);
 
     var coin24hr = $("<div style=font-size:125%;>")
+      .attr("id", "cardBack")
       .text("Daily Variation: " + price_24hr_pcnt)
       .addClass("card-body");
+      
 
     var coinVolume = $("<div style=font-size:125%;>")
+      .attr("id", "cardBack")
       .text("Daily Volume: " + volume_24hr)
       .addClass("card-body");
 
     var deleteBtn = $("<div>")
-      .html("<button id=deleteBtn>Delete</button>")
+      .attr("id", "cardBack")
+      .html("<button type=button class=btn btn-outline-secondary id=deleteBtn>Delete</button>")
       .addClass("card-body");
 
     cardDiv.append(cardDivHeader, cardDivBody, coin24hr, coinVolume, deleteBtn);
@@ -114,7 +119,7 @@ function displayNews(searchResult) {
   "&" +
   "sortBy=popularity&" +
   "apiKey=38c87e1ae12f4acfb71ae21131a63bce";
-  console.log("S Result: " + searchResult);
+
 
   $.ajax({
     url: queryURL,
