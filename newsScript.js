@@ -86,7 +86,7 @@ function displayCards(searchResult) {
       .addClass("card-body");
 
     var coinVolume = $("<div style=font-size:125%;>")
-      .text("Volume: " + volume_24hr)
+      .text("Daily Volume: " + volume_24hr)
       .addClass("card-body");
 
     var deleteBtn = $("<div>")
