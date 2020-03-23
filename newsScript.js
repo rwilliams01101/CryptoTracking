@@ -114,35 +114,31 @@ function displayNews(searchResult) {
     searchResult = "neo cryptocurrency"
   }
   var queryURL =
-  "https://newsapi.org/v2/everything?language=en&q=" +
+  "https://min-api.cryptocompare.com/data/v2/news/?categories=" +
   searchResult +
-  "&" +
-  "sortBy=popularity&" +
-  "apiKey=38c87e1ae12f4acfb71ae21131a63bce";
+  ",&lang=EN"
 
 
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    // console.log(response);
+    console.log(response);
 
     for (i = 0; i < 3; i++) {
-      var articleLink = response.articles[i].url;
-      var articleDesc = response.articles[i].description;
+      var articleLink = response.Data[i].url;
+      var articleDesc = response.Data[i].body;
 
       // console.log(articleLink);
 
       var divCard = $("<div class = card id = newsCard>");
       // console.log(divCard);
       var addArticles = $("<a>");
-      var addImage = $("<img>");
-
-      addImage.attr("src", response.articles[i].urlToImage);
+      
       addArticles.attr("href", articleLink);
-      var newsTitle = $("<h4>" + response.articles[i].title + "</h4>");
+      var newsTitle = $("<h4>" + response.Data[i].title + "</h4>");
 
-      addArticles.text(response.articles[i].title);
+      addArticles.text(response.Data[i].title);
       divCard.append(
         newsTitle,
         articleDesc,
