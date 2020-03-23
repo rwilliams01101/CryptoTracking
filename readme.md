@@ -4,7 +4,7 @@ The CryptoTracking Team has one focus - we want to have all the cryptocurrency d
 
 ## Getting Started
 
-Our easy to navigate search list gives you the ticker symbol for each of your cryptocurrencies. Click a ticker symbol, hit search, and you're on your way to staying current with the every expanding world of cryptocurrency. Choose everything you'd like to track and it will provide you with vital statistics and news articles.
+Our easy to navigate search list gives you the ticker symbol for each of your cryptocurrencies. Click a ticker symbol, hit search, and you're on your way to staying current with the ever-expanding world of cryptocurrency. Choose everything you'd like to track and it will provide you with vital statistics and news articles.
 
 ## Deployment
 
@@ -15,11 +15,11 @@ CryptoTracking is deployed and available for use at https://srfrog1970.github.io
 * [News API](https://newsapi.org/) - Displays related news, based on search criteria.
 * [Brave New Coin API](https://bravenewcoin.com/developers) - Displays relevant data, based on search criteria.
 * [CryptoCompare](https://www.cryptocompare.com/) - Pulls relevent data for charts, based on search criteria.
+* [ChartsJS](https://www.chartjs.org/) - Renders dynamic charts, based on search criteria. 
 
 ## Versioning
 
-This is the original development of CryptoTracking. 
-CryptoTracking 1.0
+CryptoTracking 1.0 - Release Date 22 March, 2020
 
 ## Authors
 
