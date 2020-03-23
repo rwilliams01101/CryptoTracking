@@ -71,7 +71,7 @@ function displayCards(searchResult) {
     // console.log(last_price);
     // console.log(price_24hr_pcnt);
     // console.log(volume_24hr);
-    var cardDiv = $("<div>").addClass("col-3");
+    var cardDiv = $("<div>").addClass("col-sm-3");
 
     var cardDivHeader = $("<h4>")
       .addClass("card-header deleteCard")
@@ -101,7 +101,7 @@ function displayCards(searchResult) {
 
 // TODO: Still developing deleteBtn functionality, need to get unique ids to generate for cards
 $(document).on("click", "#deleteBtn", function() {
-  $(this).closest('.col-3').remove();
+  $(this).closest('.col-sm-3').remove();
 });
 
 function displayNews(searchResult) {
