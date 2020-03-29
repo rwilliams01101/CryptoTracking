@@ -50,61 +50,14 @@
             <form>
               <div class="form-group">
                 <!-- <label for="exampleFormControlInput1">Please Select Your Currency:</label> -->
-                <select class="form-control select2">
+                <select class="form-control select2" id="add-coinList">
                   <option value="">Please Select Your Currency</option>
-                  <option>ADA</option>
-                  <option>ALGO</option> 
-                  <option>ATOM</option> 
-                  <option>BAT</option> 
-                  <option>BCD</option> 
-                  <option>BCH</option>
-                  <option>BNB</option>  
-                  <option>BTC</option> 
-                  <option>BTG</option> 
-                  <option>BUSD</option> 
-                  <option>CAR</option> 
-                  <option>CRO</option> 
-                  <option>DASH</option> 
-                  <option>DCR</option> 
-                  <option>DOGE</option> 
-                  <option>EOS</option> 
-                  <option>ETC</option> 
-                  <option>ETH</option> 
-                  <option>FTT</option> 
-                  <option>HBAR</option> 
-                  <option>HEDG</option> 
-                  <option>HT</option> 
-                  <option>ICX</option> 
-                  <option>IOTA</option> 
-                  <option>KCS</option> 
-                  <option>LEO</option> 
-                  <option>LSK</option> 
-                  <option>LTC</option> 
-                  <option>MKR</option>  
-                  <option>NEO</option> 
-                  <option>OKB</option> 
-                  <option>ONT</option> 
-                  <option>PAX</option> 
-                  <option>QTUM</option> 
-                  <option>REP</option> 
-                  <option>SNX</option> 
-                  <option>TRX</option> 
-                  <option>TUSD</option> 
-                  <option>USDC</option> 
-                  <option>VET</option> 
-                  <option>WAVES</option> 
-                  <option>XLM</option> 
-                  <option>XMR</option> 
-                  <option>XRP</option> 
-                  <option>XTZ</option>  
-                  <option>ZEC</option> 
-                  <option>ZRX</option> 
                </select>
               </div>
-              <button type="button" class="btn btn-outline-secondary" id='search'>
+              <button type="button" class="btn btn-outline-secondary" id='searchClick'>
                 Search
               </button>
-              <button type="button" class="btn btn-outline-secondary" id = 'clear'>Clear</button>
+              <button type="button" class="btn btn-outline-secondary" id = 'clearClick'>Clear</button>
             </form>
           </div>
         </div>
@@ -152,8 +105,10 @@
       </footer>
     </body>
   </html>
-  <script src = "./newsScript.js"></script>
-  <script src = "./coindeskAPI.js"></script>
+  <script src = "./script.js"></script>
+  <script src = "./getcoinList.js"></script>
+  <script src = "./getCoinCards.js"></script>
+  <script src = "./getCoinNews.js"></script>
   <!-- <script src = "buildcoins.js"></script> -->
   </body>
 </html>
