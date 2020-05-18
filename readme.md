@@ -13,9 +13,7 @@ CryptoTracking is deployed and available for use at https://srfrog1970.github.io
 ## Built With
 
 * [News API](https://newsapi.org/) - Displays related news, based on search criteria.
-* [Brave New Coin API](https://bravenewcoin.com/developers) - Displays relevant data, based on search criteria.
 * [CryptoCompare](https://www.cryptocompare.com/) - Pulls relevent data for charts, based on search criteria.
-* [ChartsJS](https://www.chartjs.org/) - Renders dynamic charts, based on search criteria. 
 
 ## Versioning
 
@@ -23,10 +21,10 @@ CryptoTracking 1.0 - Release Date 22 March, 2020
 
 ## Authors
 
-* **Shawn Hayes** - *Initial Build* - [Github](https://github.com/srfrog1970)
-* **Sumera Khan** - *Back End - API Development* - [Github](https://github.com/sumerakhan16)
-* **Bethany Polovitz** - *Front End - News* - [Github](https://github.com/bpolo15)
 * **R. Alan Williams** - *Front End - Crypto Currency* - [Github](https://github.com/rwilliams01101)
+* **Bethany Polovitz** - *Front End - News* - [Github](https://github.com/bpolo15)
+* **Shawn Hayes** - *Back End - API Development* - [Github](https://github.com/srfrog1970)
+* **Sumera Khan** - *Back End - API Development* - [Github](https://github.com/sumerakhan16)
 
 ## Acknowledgments
 
