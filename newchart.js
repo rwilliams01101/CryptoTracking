@@ -4,14 +4,9 @@ $.ajax(settings).then(function(response) {
       coin_name,
       last_price,
       price_24hr_pcnt,
-      volume_24hr,
-      vol_24hr_pcnt
+      volume_24hr
     } = response;
-    // console.log(coin_id);
-    // console.log(coin_name);
-    // console.log(last_price);
-    // console.log(price_24hr_pcnt);
-    // console.log(volume_24hr);
+
     var cardDiv = $("<div>").addClass("col-3");
 
     var cardDivHeader = $("<h4>")
@@ -61,16 +56,11 @@ function displayNews(searchResult) {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    // console.log(response);
 
     for (i = 0; i < 3; i++) {
       var articleLink = response.articles[i].url;
       var articleDesc = response.articles[i].description;
-
-      // console.log(articleLink);
-
       var divCard = $("<div class = card id = newsCard>");
-      // console.log(divCard);
       var addArticles = $("<a>");
       var addImage = $("<img>");
 
@@ -91,6 +81,7 @@ function displayNews(searchResult) {
     }
   });
 }
+
 $("#clear").on("click", function() {
   var coinList = "";
   window.localStorage.removeItem("coins");
@@ -98,25 +89,6 @@ $("#clear").on("click", function() {
   
 });
 
-// var coinList = JSON.parse(window.localStorage.getItem("coins")) || [];
-// coinList.forEach(loadHistData);
-
-// function loadHistData(coin) {
-// var queryURL =
-//   "https://min-api.cryptocompare.com/data/v2/histoday?fsym=" +
-//   coin +
-//   "&tsym=USD&limit=10&api_key=d797606d445e37e288f15360b88c112e5f8629b3437e482303471a25b1785e78";
-// $.ajax({
-//   url: queryURL,
-//   method: "GET"
-// }).then(function(response) {
-//   // console.log(response);
-// });
-// }
-
-// $('#charts').append(loadHistData());
-
-//toggle
 document.addEventListener('DOMContentLoaded', function () {
   var checkbox = document.querySelector('input[type="checkbox"]');
 
@@ -132,15 +104,11 @@ document.addEventListener('DOMContentLoaded', function () {
   })
     });
 
-//chart
-// var coinPrice = [];
-// var coinDate = [];
 var coinPriceArray = [];
     var coinDateArray = [];
 
 $(document).ready(function() {
   var coinList = JSON.parse(window.localStorage.getItem("coins")) || [];
-  //  coinList[0].forEach(loadHistData);
   loadHistData(coinList[0]);
 });
     
@@ -168,9 +136,6 @@ async function loadHistData(coin) {
 
       coinDateArray.push(time);
       coinPriceArray.push(price);
-
-      // console.log(coinDateArray);
-      // console.log(coinPriceArray);
       
     }
     console.log(coinPriceArray);
@@ -193,8 +158,6 @@ async function loadHistData(coin) {
           text: 'Cryptocurrency Prices (March)'
         }
       }
-    });
-      
+    }); 
   });
-
 }

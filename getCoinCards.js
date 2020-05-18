@@ -1,5 +1,5 @@
 function displayCards(searchResult) {
-  //  console.log(searchResult);
+
   queryURL =
     "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" +
     searchResult +
@@ -9,7 +9,6 @@ function displayCards(searchResult) {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    //   console.log("got price query");
     var responseData = response.DISPLAY;
     for (let [coinID, coinValues] of Object.entries(responseData)) {
       for (let [coinFiat, coinDisplayValues] of Object.entries(coinValues)) {
@@ -20,8 +19,7 @@ function displayCards(searchResult) {
 
   function buildCard(coin_id, coinDisplayValues) {
     var { PRICE, VOLUME24HOUR, HIGH24HOUR, LOW24HOUR } = coinDisplayValues;
-    // console.log(coin_id);
-    // console.log(PRICE);
+    
     var cardDiv = $("<div>")
       .addClass("col-sm-3 coinCard " + coin_id)
       .attr("id", coin_id);

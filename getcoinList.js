@@ -7,7 +7,6 @@ function getCoinList(coinList) {
 
   $.ajax(settings).then(function(response) {
     var responseData = response.Data;
-    // console.log(responseData);
 
     for (key in responseData) {
       $("#add-coinList").append(

@@ -1,4 +1,4 @@
-// Event listener for search button
+// Event listener for search button 13 is enter
 $(document).on("keypress", function(e) {
   if (e.which == 13) {
     $("#search").click();
@@ -49,10 +49,6 @@ $(document).on("click", "#deleteBtn", function() {
   var coinID = $(this)
     .closest(".coinCard")
     .remove();
-
-  // $(this)
-  // .closest(".col-sm-3")
-  // .remove();
 });
 
 $("#clearClick").on("click", function() {
