@@ -38,7 +38,7 @@ $.ajax(settings).then(function(response) {
 
     $("#add-crytocards").append(cardDiv);
   });
-}
+
 
 // TODO: Still developing deleteBtn functionality, need to get unique ids to generate for cards
 $(document).on("click", "#deleteBtn", function() {
