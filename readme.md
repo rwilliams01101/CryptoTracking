@@ -6,6 +6,8 @@ The CryptoTracking Team has one focus - we want to have all the cryptocurrency d
 
 Our easy to navigate search list gives you the ticker symbol for each of your cryptocurrencies. Click a ticker symbol, hit search, and you're on your way to staying current with the ever-expanding world of cryptocurrency. Choose everything you'd like to track and it will provide you with vital statistics and news articles.
 
+![CryptoTracking_Demo](/assets/images/CryptoTracking_Demo.gif)
+
 ## Deployment
 
 CryptoTracking is deployed and available for use at https://srfrog1970.github.io/CryptoTracking/.
